@@ -1,0 +1,137 @@
+<html lang="en">
+
+<head>
+    <title>EPF</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<title>Registration Form</title>
+<script type="text/javascript">
+
+    function calc() {
+        var bp, DA, HRA, GP, PF, Tax, Deduction, NetPay, name, id, desg;
+        name = document.form1.firstname.value;
+        id = document.form1.userid.value;
+        desg = document.form1.designation.value;
+        bp = parseInt(document.form1.bp.value);
+
+        DA = bp * 0.5;
+        HRA = bp * 0.5;
+        GP = bp + DA + HRA;
+        PF = GP * 0.02;
+        Tax = GP * 0.01;
+        Deduction = Tax + PF;
+        NetPay = GP - Deduction;
+
+        document.form1.da.value = DA;
+        document.form1.hra.value = HRA;
+        document.form1.gp.value = GP;
+        document.form1.pf.value = PF;
+        document.form1.tax.value = Tax;
+        document.form1.deduction.value = Deduction;
+        document.form1.netpay.value = NetPay
+
+
+    }
+</script>
+</head>
+
+<body>
+
+    <div class="container-fluid p-5 bg-primary text-white text-center">
+        <h1>Find The EPF</h1>
+        <!-- <p>Resize this responsive page to see the effect!</p> -->
+    </div>
+
+    <div class="container-fluid bg-light mt-5" style="padding-bottom:3%;">
+        <!-- <div class="container ">
+            <h4 style="padding-top: 2%;"><i class="fa fa-american-sign-language-interpreting mr-2"
+                    aria-hidden="true"></i>EPF</h4>
+            <hr class="new3">
+        </div> -->
+        <div class="container mt-4">
+            <div class="row">
+                <!-- <div class="card3"> -->
+                <div class="col-lg-12 col-sm-12 col-12 mt-2">
+                    <div id="tab1" class="col-lg-12 bg-white ">
+
+
+                        <form name="form1">
+                            <div class="row">
+                                <!-- <table class="tab1 text-center mt-3 mb-1"> -->
+
+                                <div class="table-responsive-sm">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-sm-6 col-6 mt-2" >
+                                            <table class="table table-bordered text-center" style="height:95%;">
+                                                <tr class="table-primary">
+                                                    <td>Name</td>
+                                                    <td><input type="text" name="firstname" /></td>
+                                                </tr>
+                                                <tr class="table-primary">
+                                                    <td>User ID</td>
+                                                    <td><input type="text" name="userid" /></td>
+                                                </tr>
+                                                <tr class="table-primary">
+                                                    <td>Designation</td>
+                                                    <td><input type="text" name="designation" /></td>
+                                                </tr>
+                                                <tr class="table-primary">
+                                                    <td>Basic Pay</td>
+                                                    <td><input type="text" name="bp"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" align="center">
+                                                        <input type="button" class="btn btn-primary bg-dark" name="calculate" id="#click"
+                                                            value="Click Here To Calculate" onclick="calc()">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="col-lg-6 col-sm-6 col-6 mt-2">
+                                            <table class="table table-bordered tab1">
+                                                <div class="" id="click"></div>
+                                                <tr class="table-warning">
+                                                    <td>Dearness Allowance </td>
+                                                    <td><input type="text" name="da" /></td>
+                                                </tr>
+                                                <tr class="table-warning">
+                                                    <td>House Rent Allowance </td>
+                                                    <td><input type="text" name="hra"></td>
+                                                </tr>
+                                                <tr class="table-warning">
+                                                    <td>GP</td>
+                                                    <td><input type="text" name="gp"></td>
+                                                </tr>
+                                                <tr class="table-warning">
+                                                    <td>Provident Fund</td>
+                                                    <td><input type="text" name="pf" /></td>
+                                                </tr>
+                                                <tr class="table-warning">
+                                                    <td>Tax</td>
+                                                    <td><input type="text" name="tax" /></td>
+                                                </tr>
+                                                <tr class="table-warning">
+                                                    <td>Deduction</td>
+                                                    <td><input type="text" name="deduction" /></td>
+                                                </tr>
+                                                <tr class="table-warning">
+                                                    <td>NetPay</td>
+                                                    <td><input type="text" name="netpay" /></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
